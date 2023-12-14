@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <title>THYNK UNLIMITED EMPLOYEE DASHBOARD</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        </head>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+            }
+    
+            /* Add CSS styles for the button size */
+            .attendance-section button {
+                padding: 30px 40px; /* Adjust padding for the desired size */
+                font-size: 20px; /* Adjust font size for the desired size */
+            }
+        </style>
+    <body>
+        <div id="header">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img src="https://media.giphy.com/media/hQT59ncku4wUM/giphy.gif" alt="Logo" style="width:40px;"
+                                class="rounded-pill">THYNK UNLIMITED
+                        </a>
+                    </div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item zoom-out">
+                            <a class="bi bi-house-fill icon-color-header" href="{{ url_for('index') }}"></a>
+                        </li>
+                        <li class="nav-item header-padding-menu-item">
+                            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                        </li>
+                        <li class="nav-item zoom-out">
+                            <a class="bi bi-menu-button-wide-fill icon-color-header" href="{{ url_for('login') }}"></a>
+                        </li>
+                        <li class="nav-item header-padding-menu-item">
+                            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item zoom-out">
+                            <a class="bi bi-camera2 icon-color-header" href="{{ url_for('login') }}"></a>
+                        </li>
+                        <li class="nav-item header-padding-menu-item">
+                            <a class="nav-link" href="{{ url_for('gallery') }}">Gallery</a>
+                        </li>
+                        <li class="nav-item zoom-out">
+                            <a class="bi bi-headset icon-color-header" href="{{ url_for('login') }}"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('login') }}">Contact Us</a>
+                        </li>
+                        <li class="nav-item zoom-out">
+                            <a class="bi bi-headset icon-color-header" href="{{ url_for('logout') }}"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('index') }}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+<head>
+<body>
+    <h1>Welcome, Employee</h1>
+    <img src="{{ url_for('static', filename='images/bg4.jpg') }}" class="attendance-bg-image">
+    <section class="attendance-section">
+        <button onclick="markAttendance()">Mark Your Attendance</button>
+    </section>
+    <script>
+        function markAttendance() {
+            fetch('/mark_attendance')
+        }
+    </script>
+</body>
+</html>
